@@ -1,4 +1,4 @@
-package search;
+package divide_and_conquer.search;
 
 /**
  * Created by praveendewangan on 14/07/18.

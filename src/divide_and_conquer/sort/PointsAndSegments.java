@@ -1,6 +1,5 @@
-package sort;
+package divide_and_conquer.sort;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,7 +18,7 @@ public class PointsAndSegments {
     }
 
     /*counting login for counting no occurrences of element in segment range
-     * basically using binary search for that but in-place of returning on finding element
+     * basically using binary divide_and_conquer.search for that but in-place of returning on finding element
       * just incrementing start so that it will look for next segment range... */
     private static int findElementUsingWhile(int[] segmentX, int[] segmentY, int element, int start, int end) {
         int count = 0;
