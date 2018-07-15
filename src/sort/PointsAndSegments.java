@@ -119,12 +119,17 @@ public class PointsAndSegments {
         for (int i = 0; i < m; i++) {
             points[i] = scanner.nextInt();
         }
+        long startTime = System.nanoTime();
         //use fastCountSegments
         int[] cnt = fastCountSegments(starts, ends, points);
 
         for (int x : cnt) {
            System.out.print(x + " ");
         }
+
+        long endTime   = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
     }
 }
 
