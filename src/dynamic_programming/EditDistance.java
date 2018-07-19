@@ -15,19 +15,26 @@ class EditDistance {
       matrix[0][j] = j;
     }
 
-    for (int i = 1 ; i< arr1.length ; i++) {
-       for (int j = 1; j< arr2.length; j++) {
-         int left = matrix[i-1][j-1];
-         int top = matrix[i][j-1];
-         int adjacent = matrix[i-1][j-1];
-         int min = left < top && left < adjacent ? left : adjacent < top ? adjacent : top;
-         if (arr1[i] != arr2[j]) {
-           min = min +1;
-         }
-         matrix[i][j] = min;
-       }
-    }
-    return matrix[arr1.length-1][arr2.length-1];
+      for (int i = 0; i < arr1.length; i++) {
+          int x = i+1;
+
+          for (int j = 0; j < arr2.length; j++) {
+                int y = j+1;
+              int top = matrix[x - 1][y];
+              int left = matrix[x][y - 1];
+              int adjacent = matrix[x - 1][y - 1];
+
+              int min = left < top && left < adjacent ? left : adjacent < top ? adjacent : top;
+
+              if (arr1[i] != arr2[j]) {
+                  min++;
+              } else {
+                  min = adjacent;
+              }
+              matrix[x][y] = min;
+          }
+      }
+    return matrix[arr1.length][arr2.length];
   }
   public static void main(String args[]) {
     Scanner scan = new Scanner(System.in);
