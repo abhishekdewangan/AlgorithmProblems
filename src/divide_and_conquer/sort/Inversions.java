@@ -84,5 +84,6 @@ public class Inversions {
         System.out.println();
         Arrays.stream(a).forEach(data -> System.out.print("  "+data));
     }
+
 }
 
